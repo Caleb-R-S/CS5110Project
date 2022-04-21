@@ -6,10 +6,19 @@ class Voter():
         self.probDemocrat = probDemocrat
     
     def Borda(self):
+        probIndependant = 1 - self.probRepublican - self.probDemocrat
+        vote = random.randint(0, 100)
         pass
 
     def Ranked(self):
-        pass
+        probIndependant = 1 - self.probRepublican - self.probDemocrat
+        vote = random.randint(0, 100)
+        if(vote <= self.probRepublican * 100):
+            return "Republican"
+        elif(self.probRepublican and vote <= self.probDemocrat and vote < probIndependant):
+            return "Democrat"
+        else:
+            return "Independent"
 
     def Plurality(self):
         vote = random.randint(0, 100)
@@ -22,3 +31,5 @@ class Voter():
         else:
             return "Independent"
         
+testVoter = Voter(0.5, 0.5)
+print(testVoter.Ranked())
