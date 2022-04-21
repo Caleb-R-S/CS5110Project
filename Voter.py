@@ -5,6 +5,18 @@ class Voter():
         self.probRepublican = probRepublican
         self.probDemocrat = probDemocrat
     
+    def setProbRepublican(self, newProb):
+        self.probRepublican = newProb
+    
+    def setProbDemocrat(self, newProb):
+        self.probDemocrat = newProb
+
+    def getProbRepublican(self):
+        return self.probRepublican 
+ 
+    def getProbDemocrat(self):
+        return self.probDemocrat
+    
     def Borda(self):
         pass
 
