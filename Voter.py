@@ -24,10 +24,17 @@ class Voter():
 
     def Ranked(self):
         probIndependant = 1 - self.probRepublican - self.probDemocrat
+        print(self.probRepublican)
+        print(self.probDemocrat)
+        print(probIndependant)
+
+        vote = ()
+
         vote = random.randint(0, 100)
         if(vote <= self.probRepublican * 100):
-            return "Republican"
-        elif(self.probRepublican and vote <= self.probDemocrat and vote < probIndependant):
+            
+            vote.append("Republican")
+        elif(vote <= self.probDemocrat * 100 + self.probRepublican * 100):
             return "Democrat"
         else:
             return "Independent"
@@ -43,5 +50,5 @@ class Voter():
         else:
             return "Independent"
         
-testVoter = Voter(0.5, 0.5)
+testVoter = Voter(0.33, 0.33)
 print(testVoter.Ranked())
