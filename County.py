@@ -24,3 +24,17 @@ class County():
       votes.vote += 1
     return votes
 
+  def countyVoteBorda(self):
+    votes = {"Republican": 0, "Democrat": 0, "Independent": 0}
+    for voter in self.voters:
+      vote = voter.Borda()
+      votes.vote += 1
+    return votes
+
+  def countyVoteRanked(self):
+    votes = {"Republican": 0, "Democrat": 0, "Independent": 0}
+    for voter in self.voters:
+      vote = voter.Ranked()
+      votes.vote += 1
+    return votes
+
